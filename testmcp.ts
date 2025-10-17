@@ -10,7 +10,7 @@ const mcp = hostedMcpTool({
     "search",
     "fetch"
   ],
-  authorization: "REDACTED",
+  authorization: process.env.MCP_AUTHORIZATION_TOKEN || "REDACTED",
   requireApproval: "never",
   serverUrl: "https://kyo-mcp.kyocare.com"
 })
