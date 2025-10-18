@@ -7,7 +7,8 @@
     "build": "tsc",
     "start": "node index.js",
     "dev": "tsc && node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "node -e \"console.log('Environment check:'); console.log('OPENAI_API_KEY:', process.env.OPENAI_API_KEY ? '[SET]' : '[NOT SET]'); console.log('MCP_AUTHORIZATION_TOKEN:', process.env.MCP_AUTHORIZATION_TOKEN ? '[SET]' : '[NOT SET]'); console.log('All env vars:', Object.keys(process.env).filter(k => k.includes('OPENAI') || k.includes('MCP')).join(', '));\""
   },
   "keywords": [],
   "author": "",
