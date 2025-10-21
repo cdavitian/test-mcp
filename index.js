@@ -57,6 +57,17 @@ async function main() {
     console.log('Result:', result);
   } catch (error) {
     console.error('Error:', error);
+    
+    // Provide specific guidance for MCP authentication errors
+    if (error.message && error.message.includes('401')) {
+      console.error('MCP Authentication Error: The MCP server is returning a 401 Unauthorized error.');
+      console.error('This usually means:');
+      console.error('1. The MCP_AUTHORIZATION_TOKEN is incorrect or expired');
+      console.error('2. The MCP server URL is incorrect');
+      console.error('3. The MCP server requires different authentication');
+      console.error('Please check your environment variables in Railway deployment settings.');
+    }
+    
     // Don't exit on error - let Railway handle it
     console.log('Application will continue running...');
   }
